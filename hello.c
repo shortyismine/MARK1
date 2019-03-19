@@ -1,7 +1,7 @@
 #include<stdio.h>
 main()
 {
-  printf("\nHello.C!\n");
+  printf("\nev\n");
 }
 
   
