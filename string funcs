@@ -1,0 +1,59 @@
+#include<stdio.h>
+int str_len(char s[]);
+int str_cmp(char s1[],char s2[]);
+int str_cat(char s1[],char s2[]);
+int main()
+{
+    int len1,len2,s;
+    char s1[10],s2[10];
+    printf("Enter the first string:");
+    scanf("%s",s1);
+    printf("\nEnter the second string:");
+    scanf("%s",s2);
+    len1=str_len(s1);
+    len2=str_len(s2);
+    printf("Length of string 1 = %d\nLength of string 2 = %d\n",len1,len2);
+    s=str_cmp(s1,s2);
+    if(s==0)
+    {
+        printf("\nEqual Strings\n");
+    }
+    else
+    {
+        printf("\nUnequal Strings\n");
+    }
+    str_cat(s1,s2);
+    printf("\nConcatenated string = %s",s1);
+}
+
+int str_len(char s[])
+{
+    int i=0;
+    while(s[i]!='\0')
+    i++;
+    return i;
+}
+
+int str_cmp(char s1[],char s2[])
+{
+    int i=0;
+    while(s1[i]==s2[i]&&s1[i]!='\0'&&s2[i]!='\0')
+    i++;
+    return s1[i]-s2[i];
+}
+
+int str_cat(char s1[],char s2[])
+{
+    int i,j;
+    i=0;
+    while(s1[i]!='\0')
+    i++;
+    j=0;
+    while(s2[j]!='\0')
+    {
+        s1[i]=s2[j];
+        j++;
+        i++;
+    }
+    s1[i]='\0';
+}
