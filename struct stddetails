@@ -1,0 +1,44 @@
+#include<stdio.h>
+struct stud
+{
+    char name[20],usn[20];
+    int marks;
+};
+
+int main()
+{
+    struct stud s[10];
+    int n,i,countav=0,countbv=0,sum=0,avg;
+    printf("Enter the number of students;");
+    scanf("%d",&n);
+    printf("\nEnter the student details:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("Enter Name:");
+        scanf("%s",s[i].name);
+        printf("\nEnter USN:");
+        scanf("%s",s[i].usn);
+        printf("\nEnter Marks:");
+        scanf("%d",&s[i].marks);
+    }
+    printf("\nThe entered details are:\n\n");
+    for(i=0;i<n;i++)
+    {
+        printf("Name: %s\nUSN: %s\nMarks: %d\n",s[i].name,s[i].usn,s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        sum=sum+s[i].marks;
+    }
+    avg=sum/n;
+    printf("\nThe class average = %d",avg);
+    
+    for(i=0;i<n;i++)
+    {
+        if(s[i].marks>=avg)
+        countav++;
+        else
+        countbv++;
+    }
+    printf("\nThe number of students having above class average marks: %d\nThe number of students having below class average marks: %d\n",countav,countbv);
+}
