@@ -1,0 +1,44 @@
+#include<stdio.h>
+int
+main ()
+{
+  int a, b, c;
+  float r, r1, r2, rpart, ipart, d;
+  printf ("\nEnter three coefficients: \n");
+  scanf ("%d %d %d", &a, &b, &c);
+  if (a == 0 && b == 0)
+    {
+      printf ("\nInvalid\n");
+    }
+  else if (a == 0)
+    {
+      r = -c / b;
+      printf ("\nLinear Equation\nRoot = %f", r);
+    }
+  else
+    {
+      d = (b * b) - (4 * a * c);
+      if (d == 0)
+	{
+	  r1 = -b / (2 * a);
+	  r2 = r1;
+	  printf ("\nReal and equal roots\nRoot 1 = %f\nRoot 2 = %f", r1, r2);
+	}
+
+      else if (d > 0)
+	{
+	  r1 = (-b + sqrt (d)) / (2 * a);
+	  r2 = (-b - sqrt (d)) / (2 * a);
+	  printf ("\nRoots are real and distinct\nRoot 1 = %f\nRoot 2 = %f\n",
+		  r1, r2);
+	}
+
+      else
+	{
+	  rpart = -b / (2 * a);
+	  ipart = sqrt (fabs (d)) / (2 * a);
+	  printf ("\nRoots are Imaginary\nRoot 1 = %f+i%f\nRoot 2 = %f-i%f",
+		  rpart, ipart, rpart, ipart);
+	}
+    }
+}
