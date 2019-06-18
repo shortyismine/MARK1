@@ -1,0 +1,17 @@
+#include<stdio.h>
+int
+main ()
+{
+
+  float sq, n, temp;
+  printf ("\nEnter the number: ");
+  scanf ("%f", &n);
+  sq = n;
+  temp = 0;
+  while (sq != temp)
+    {
+      temp = sq;
+      sq = (n / temp + temp) / 2;
+    }
+  printf ("\nThe square root of %.3f = %.3f\n", n, sq);
+}
